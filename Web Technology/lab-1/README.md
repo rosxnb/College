@@ -14,6 +14,7 @@ Also, unlike previous recommendations, it includes detailed insturctions for how
 and legacy markdown.
 
 ---
+### Resources
 +   The _"living"_ __specification of the HTML__ can be found [here](http://whatwg.org).
 +   [Can I Use](https://caniuse.com).
 +   [HTML5 validator](https://validator.w3.org/#validate_by_uri+with_options).
