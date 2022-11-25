@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Lab2 Q1 </title>
+    <style>
+      .sub-order { counter-reset: item }
+      .sub-order > li { list-style-type: none }
+      .sub-order > li::before { 
+        content: "1." counter(item) " ";
+        counter-increment: item;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3 align="center" style= "margin: 20px 0 "> Web Techonology </h3>
+    <table style=" width: 100vw; table-layout: fixed ">
+      <tbody>
+        <tr>
+          <td style=" padding-left: 7% "> <b>Course Title:</b> Web Technology </td>
+          <td style=" padding: 0 4% 0 30% "> <b>Full Marks:</b> 60+20+20 </td>
+        </tr>
+        <tr>
+          <td style=" padding-left: 7% "> <b>Course No:</b> CSC318 </td>
+          <td style=" padding: 0 4% 0 30% "> <b>Pass Marks:</b> 24+8+8 </td>
+        </tr>
+        <tr>
+          <td style=" padding-left: 7% "> <b>Nature of the Course:</b> Theory + Lab </td>
+          <td style=" padding: 0 4% 0 30% "> <b>Credit hours:</b> 3 </td>
+        </tr>
+        <tr>
+          <td colspan="2" style=" padding-left: 7% "> <b>Semester:</b> V </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style=" margin: 0 7% ">
+      <div class="hero-section">
+        <p>
+          <strong>Course Description:</strong> This course covers the fundamental concepts of HTML, 
+          CSS, JavaScript, XML, and PHP.
+        </p>
+
+        <p>
+          <strong>Course Objectives:</strong> The objective of this course are:
+        </p>
+        <ul style=" margin-top: -12px ">
+          <li> Basic knowledge of web design </li>
+          <li> Client Side Scripting with JavaScript </li>
+          <li> Server Side Scripting with PHP </li>
+          <li> Handling web data using XML </li>
+        </ul>
+      </div>
+
+      <div class="course-content">
+        <div class="chapter">
+          <dl>
+            <dt> <b>Unit I: Introduction</b> </dt>
+            <dd style=" margin-top: -12px ">
+              <ol class="sub-order">
+                <li style=" padding-bottom: 5px "> Web Basics: Internet, Intranet, WWW, Static and Dynamic Web Page; Web Clients; Web Servers </li>
+                <li style=" padding-bottom: 5px "> Client Server Architecture: Single Tier, Two-Tier, Multi-Tier </li>
+                <li style=" padding-bottom: 5px "> HTTP: HTTP Request and Response; URL </li>
+                <li style=" padding-bottom: 5px "> Client Side Scripting, Server Side Scripting </li>
+                <li> Web 1.0, Web 2.0 </li>
+              </ol>
+            </dd>
+            </dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </body>

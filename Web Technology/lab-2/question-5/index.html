@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Lab2 Q5 </title>
+  </head>
+
+  <body>
+    <form action="/backend.py" method="POST" autocomplete="on">
+      <br>
+      <fieldset>
+        <legend> Personal Information </legend>
+        <legend>
+          Full Name: <input type="text">
+        </legend>
+        <legend>
+          Age: <input type="number">
+        </legend>
+        <legend>
+          Email: <input type="email">
+        </legend>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend> Extra Info </legend>
+        <legend>
+          Gender: 
+          <input type="radio" name="gender"> Male 
+          <input type="radio" name="gender"> Female
+          <input type="radio" name="gender"> Others
+        </legend>
+        <legend>
+          Education level: 
+          <select>
+            <option> SLC/SEE </option>
+            <option> +2/GCE </option>
+            <option selected> Bachelors </option>
+            <option> Masters </option>
+            <option> Doctorate </option>
+          </select>
+        </legend>
+        <legend>
+          Graduation Date: <input type="month">
+        </legend>
+        <legend>
+          Favourite Color: <input type="color">
+        </legend>
+      </fieldset>
+      <br>
+      <div> 
+        <p> Tell a joke: </p>
+        <textarea cols="40" rows="15"> Just kidding ... </textarea>
+        <legend>
+          <input type="checkbox" checked>
+          Make my joke public.
+        </legend>
+      </div>
+      <br>
+      <div>
+        <legend> <input type="submit" value="Submit"> </legend>
+        <legend> <input type="reset" value="Reset all"> </legend>
+      </div>
+    </form>
+  </body>
+</html>
