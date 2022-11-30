@@ -18,3 +18,6 @@ advantage of scope of the __object defined from Timer class__.
 * Lab 5
     1. Merge Sort   `sort_merge.cpp`
     2. Heap Sort    `sort_heap.cpp`
+* Lab 6
+    1. Randomized Quick Sort   `sort_quick_randomized.cpp`
+    2. Quick Sort    `sort_quick.cpp`
