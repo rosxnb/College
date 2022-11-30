@@ -7,6 +7,7 @@ This repository contains some algorithms from the Syllabus of BSc CSIT (an under
 
 - Design and Analysis of Algorithm (CSC314) *
 - Cryptography (CSC316) *
+- Simulation and Modelling (CSC317) *
 - Web Technology (CSC318) *
 
 
