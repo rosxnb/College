@@ -1,0 +1,23 @@
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+#style-txt {
+   color: navy;
+   font-size: 30px;
+   font-weight: bold;
+}
+
+p {
+  font-family: "Arial";
+}
+
+body {
+  background-image: url("background.png");
+  background-position: right;
+  background-repeat: vertical;
+}

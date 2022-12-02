@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+  background-image: url("butterfly.jpg");
+  background-repeat: no-repeat;
+  background-position: 0px 40px;
+  position: relative;
+}
+
+#ff {
+  font-size: 1.2em;
+  font-weight: italic;
+  padding: 30em 0.2em 0.1em 0.5em;
+}
+
+
+#title {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+#header {
+  padding: 5px 15px;
+  letter-spacing: 3px;
+  box-shadow: 5px 8px 3px 4px green, -3px -2px 2px 1px blue;
+}
+
+#menu {
+  position: absolute;
+  right: 65px;
+  top: 250px;
+  padding: 5px 10px;
+}
+
+#menu-header {
+  background-color: purple;
+  color: white;
+}
+
+#menu,
+td {
+  border: 3px solid purple;
+}
+#ffact { border: 4px dashed red; }
+
+td { padding: 5px 5px; }
+a { text-decoration: none; }
+a:link {
+  color: chocolate;
+}
+a:active {
+  color: red;
+  background-color: blue;
+}
+a:hover {
+  color: purple;
+}
+a:visited {
+  text-decoration: underline;
+}

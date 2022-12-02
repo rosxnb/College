@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  background-image: url("butterfly.jpg");
+  background-repeat: repeat-x;
+  background-position: center 250px;
+}
+
+.art-culture-list { padding: 4% 5%; }
+
+.art-culture-list li {
+  list-style: none;
+  margin-top: 10px;
+  font-size: 1.3em;
+}
+
+.art-culture-list li::before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-image: url("list-point.png");
+  background-size: contain;
+}
