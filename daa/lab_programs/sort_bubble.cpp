@@ -1,13 +1,14 @@
+#include <functional>
 #include <iostream>
 #include <vector>
+#include <chrono>
+#include <random>
 #include "Timer.hpp"
-
-using std::cout, std::cin, std::endl, std::vector;
 
 // in each iteration, the largest element will get bubbled up (placed at last)
 // first loop indicates how many element/s has been sorted
 // starts by comparing very first two elements in every iteration
-void sort_bubble(vector<int>& list)
+void sort_bubble(std::vector<int>& list)
 {
     bool swapped {true};
     for (int i = 0; i < list.size() - 1 and swapped; ++i)
@@ -22,24 +23,33 @@ void sort_bubble(vector<int>& list)
     }
 }
 
-int main()
+std::ostream& operator<< (std::ostream &out, std::vector<int> const &v)
 {
-    size_t n;
-    cin >> n;
+    for (int el: v)
+        out << el << ' ';
+    return out;
+}
 
-    vector<int> list(n);
+int main(int argc, char** argv)
+{
+    int N = argv[1] ? atoi(argv[1]) : 10;
+    
+    // generate random elements
+    auto seed = std::chrono::steady_clock::now().time_since_epoch().count();
+    std::default_random_engine generator(seed);
+    std::uniform_int_distribution<int32_t> distributor(-90, 900);
+    auto rand_int = std::bind(distributor, generator);
+    std::vector<int> list(N);
     for (int& el: list)
-        cin >> el;
+        el = rand_int();
+    std::cout << "Auto generated vector: \n" << list << std::endl;
 
+    // begin bubble sort
     {
         Timer timer;
         sort_bubble(list);
     }
-
-    cout << "\nSorted elements are: \n";
-    for (int el: list)
-        cout << el << ' ';
-    cout << endl;
+    std::cout << "\nSorted vector: \n" << list << std::endl;
 
     return 0;
 }

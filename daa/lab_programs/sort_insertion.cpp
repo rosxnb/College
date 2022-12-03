@@ -1,14 +1,15 @@
+#include <functional>
 #include <iostream>
 #include <vector>
+#include <chrono>
+#include <random>
 #include "Timer.hpp"
-
-using std::cout, std::cin, std::endl, std::vector;
 
 // maintains sorted and unsorted part
 // in each iteration, insert an element from unsorted section
 // into the sorted section's correct position
 // assumes the first element is already sorted
-void sort_insertion(vector<int>& list)
+void sort_insertion(std::vector<int>& list)
 {
     // this loop selects an element from unsorted part
     for (int i = 1; i < list.size(); ++i)
@@ -24,24 +25,33 @@ void sort_insertion(vector<int>& list)
     }
 }
 
-int main()
+std::ostream& operator<< (std::ostream &out, std::vector<int> const &v)
 {
-    size_t n;
-    cin >> n;
+    for (int el: v)
+        out << el << ' ';
+    return out;
+}
 
-    vector<int> list(n);
+int main(int argc, char** argv)
+{
+    int N = argv[1] ? atoi(argv[1]) : 10;
+    
+    // generate random elements
+    auto seed = std::chrono::steady_clock::now().time_since_epoch().count();
+    std::default_random_engine generator(seed);
+    std::uniform_int_distribution<int32_t> distributor(-90, 900);
+    auto rand_int = std::bind(distributor, generator);
+    std::vector<int> list(N);
     for (int& el: list)
-        cin >> el;
+        el = rand_int();
+    std::cout << "Auto generated vector: \n" << list << std::endl;
 
+    // begin merge sort
     {
         Timer timer;
         sort_insertion(list);
     }
-
-    cout << "\nSorted elements are: \n";
-    for (int el: list)
-        cout << el << ' ';
-    cout << endl;
+    std::cout << "\nSorted vector: \n" << list << std::endl;
 
     return 0;
 }

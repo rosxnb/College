@@ -1,12 +1,13 @@
+#include <functional>
 #include <iostream>
 #include <vector>
+#include <chrono>
+#include <random>
 #include "Timer.hpp"
-
-using std::cout, std::cin, std::endl, std::vector;
 
 // time complexity: O(log(n))
 // space complexity: O(log(n))
-int search_binary(const vector<int>& list, const int target, int left, int right)
+int search_binary(const std::vector<int>& list, const int target, int left, int right)
 {
     if (left > right)
         return -1;
@@ -22,21 +23,34 @@ int search_binary(const vector<int>& list, const int target, int left, int right
     return search_binary(list, target, mid+1, right);
 }
 
-int main()
+std::ostream& operator<< (std::ostream &out, std::vector<int> const &v)
 {
-    size_t n;
-    cin >> n;
+    for (int el: v)
+        out << el << ' ';
+    return out;
+}
 
-    vector<int> list(n);
+int main(int argc, char** argv)
+{
+    int N = argv[1] ? atoi(argv[1]) : 10;
+    
+    // generate random elements
+    auto seed = std::chrono::steady_clock::now().time_since_epoch().count();
+    std::default_random_engine generator(seed);
+    std::uniform_int_distribution<int32_t> distributor(-90, 900);
+    auto rand_int = std::bind(distributor, generator);
+    std::vector<int> list(N);
     for (int& el: list)
-        cin >> el;
+        el = rand_int();
+    std::sort(list.begin(), list.end());
+    std::cout << "Auto generated vector: \n" << list << std::endl;
 
     int target;
-    cout << "Enter the element to be searched: ";
-    cin >> target;
+    std::cout << "\nEnter the element to be searched: ";
+    std::cin >> target;
     {
         Timer timer;
-        cout << "Element is found at index: " << search_binary(list, target, 0, list.size()-1) << endl;
+        std::cout << "Element is found at index: " << search_binary(list, target, 0, list.size()-1) << std::endl;
     }
 
     return 0;
