@@ -46,7 +46,6 @@ int main(int argc, char** argv)
         el = rand_int();
     std::cout << "Auto generated vector: \n" << list << std::endl;
 
-    // begin merge sort
     {
         Timer timer;
         sort_insertion(list);
