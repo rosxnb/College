@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Timer.hpp"
 
-using std::cin, std::cout, std::endl;
-
 // following function uses Euclidean Algorithm to calculate GCD of two numbers recursively
 // time complexity = O(log(min(a,b)))
 // space complexity = O(log(min(a,b)))
@@ -21,12 +19,12 @@ int recursive_gcd(int a, int b)
 int main()
 {
     int a, b;
-    cin >> a >> b;
+    std::cin >> a >> b;
 
-    cout << "GCD of " << a << " and " << b << " is: ";
+    std::cout << "GCD of " << a << " and " << b << " is: ";
     {
         Timer timer;
-        cout << recursive_gcd(a, b) << "\n";
+        std::cout << recursive_gcd(a, b) << "\n";
     }
 
     return 0;

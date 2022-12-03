@@ -2,8 +2,6 @@
 #include <vector>
 #include "Timer.hpp"
 
-using std::cout, std::cin, std::endl;
-
 void fib(size_t n)
 {
     std::vector<int> list(n+1);
@@ -14,13 +12,13 @@ void fib(size_t n)
         list[i] = list[i-1] + list[i-2];
 
     for (int el: list)
-        cout << el << ' ';
+        std::cout << el << ' ';
 }
 
 int main()
 {
     size_t n;
-    cin >> n;
+    std::cin >> n;
 
     {
         Timer timer;
