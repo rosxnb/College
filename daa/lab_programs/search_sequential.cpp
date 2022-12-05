@@ -11,7 +11,7 @@
 int search_sequential(const std::vector<int>& list, int target)
 {
     // returns index of searched element if present else return -1
-    for (int i = 1; i < list.size(); ++i)
+    for (int i = 0; i < list.size(); ++i)
         if (list[i] == target)
             return i;
 
