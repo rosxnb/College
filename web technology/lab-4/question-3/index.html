@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Lab4 Q3 </title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=trinity.edu.np">
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        position: relative;
+      }
+      #message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 42px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="message"> </p>
+    <script>
+      const message = document.getElementById("message");
+
+      const numbers = [];
+      let i;
+      for (i = 0; i < 5; ++i)
+        numbers.push(parseInt(prompt(`Enter integer number ${i+1}`)));
+
+      let sum = 0;
+      i = 0;
+      while (i < 5)
+        sum += numbers[i++];
+
+      message.innerHTML = `Sum of entered five integers is ${sum}.`
+    </script>
+  </body>
+</html>

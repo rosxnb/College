@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Lab5 </title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=trinity.edu.np">
+  </head>
+
+  <body>
+    <form action="backend.py" method="POST" autocomplete="on" id="form">
+      <br>
+      <fieldset>
+        <legend> User Registration Form </legend>
+        <legend>
+          Name: <input type="text" name="name" required placeholder="Full Name" 
+                    pattern="[a-zA-Z]* [a-zA-Z ]*" minlength="5" maxlength="100"
+                    title="name must contain first name and last name">
+        </legend>
+        <legend>
+            Username: <input type="text" name="userName" required placeholder="nickname" 
+                        pattern="[a-z][a-zA-Z_]{2,15}"
+                        title="username must start with small letter character and contain alphanumeric characters or underscore character">
+        </legend>
+        <legend>
+          Password: <input type="password" name="password" id="pw1" required
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$"
+                    title="password must be at least 8 characters long and contain uppercase, lowercase, special character and digit">
+        </legend>
+        <legend>
+          Confirm Password: <input type="password" name="confirmPassword" id="pw2" required
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$"
+                    title="password must be at least 8 characters long and contain uppercase, lowercase, special character and digit">
+        </legend>
+        <legend>
+          Gender: 
+          <input type="radio" name="gender" value="male" required> Male 
+          <input type="radio" name="gender" value="female" required> Female
+        </legend>
+        <legend>
+          Country
+          <select name="country" id="country" required>
+            <option value=""> --default-- </option>
+            <option value="nepal"> Nepal </option>
+            <option value="india"> India </option>
+            <option value="qatar"> Qatar </option>
+            <option value="usa"> USA </option>
+            <option value="canada"> Canada</option>
+          </select>
+        </legend>
+        <legend>
+          Language: 
+          <input type="checkbox" name="languages[]" class="checkboxes" value="nepali" checked> Nepali
+          <input type="checkbox" name="languages[]" class="checkboxes" value="english"> English
+          <input type="checkbox" name="languages[]" class="checkboxes" value="spanish"> Spanish
+          <input type="checkbox" name="languages[]" class="checkboxes" value="german"> German
+          <input type="checkbox" name="languages[]" class="checkboxes" value="french"> French
+        </legend>
+        <legend>
+          Email: <input type="email" required>
+        </legend>
+        <legend>
+          <input type="checkbox" required>
+          I accept the terms and conditions.
+        </legend>
+        <input type="submit" value="Submit" id="submit">
+        <input type="reset" value="Reset" id="reset">
+      </fieldset>
+    </form>
+
+    <script src="script.js"> </script>
+  </body>
+</html>

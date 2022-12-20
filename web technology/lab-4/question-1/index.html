@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Lab4 Q1 </title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=trinity.edu.np">
+    <style>
+      body {
+        margin: 0;
+        position: relative;
+        min-height: 100vh;
+      }
+      .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h2> Enter two numbers for comparison </h2>
+      <h4 id="result-message"></h4>
+    </div>
+
+    <script>
+      const message = document.getElementById("result-message");
+      let num1 = Number(prompt("Enter first number: "));
+      let num2 = Number(prompt("Enter second number: "));
+
+      if (num1 && num2)
+          message.innerHTML = num1 === num2 ? `Both numbers ${num1} and ${num2} are equal` : 
+                         num1 < num2 ? `The first number ${num1} is smaller than the second munber ${num2}` :
+                                       `The second number ${num2} is smaller than the first number ${num1}`;
+      else
+        message.innerHTML = "You have to enter both numbers for comparison to work";
+    </script>
+  </body>
+</html>

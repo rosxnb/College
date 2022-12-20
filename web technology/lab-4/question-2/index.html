@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Lab4 Q2 </title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=trinity.edu.np">
+  </head>
+  <body>
+    <script>
+      let num1 = Number(prompt("Enter first number: "));
+      let num2 = Number(prompt("Enter second number: "));
+
+      let message;
+      if (num1 && num2)
+          message = num1 === num2 ? `Both numbers ${num1} and ${num2} are equal` : 
+                         num1 < num2 ? `The first number ${num1} is smaller than the second munber ${num2}` :
+                                       `The second number ${num2} is smaller than the first number ${num1}`;
+      else
+          message = "You have to enter both numbers for comparison to work";
+
+      alert(message + '.');
+    </script>
+  </body>
+</html>
