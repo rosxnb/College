@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.main-title {
+  margin-top: 70px;
+}
+
+.event-container {
+  padding: 50px 20px;
+  margin: 70px 270px;
+  min-height: 15vh;
+  border: 1px dashed #784e28;
+}
+
+.mouse-event {
+  background-color: #968391;
+}
+
+.mouse-event p,
+.main-title {
+  text-align: center;
+}
