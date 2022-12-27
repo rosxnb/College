@@ -16,3 +16,5 @@ It has ~~all~~ the algorithms mentioned in the syllabus of BSc CSIT 5th Semester
 + Ceaser Cipher
 + Vignere Cipher
 + Playfair Cipher
++ RailFence Cipher
++ Hill Cipher
